@@ -166,10 +166,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-border/50 gap-4">
           <div className="text-sm text-muted-foreground">
-            © 2024 Dormsy. All rights reserved.
-          </div>
-          <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <span>Made with ❤️ for better hostel management</span>
+            © 2025 Dormsy. All rights reserved.
           </div>
         </div>
       </div>

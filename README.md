@@ -66,8 +66,8 @@
 
 1. **Clone the repository**
 ```bash
-git clone <YOUR_GIT_URL>
-cd dormsy
+git clone https://github.com/eswarsamanthula/Dormsy_Hostel_Management_System.git
+cd dormsy-cozy-corner-main
 ```
 
 2. **Install dependencies**
@@ -185,11 +185,7 @@ This project is licensed under the MIT License.
 
 ## 📞 Support
 
-For support, email support@dormsy.com or join our community Discord.
-
-## 🔗 Links
-
-- **Documentation**: [https://docs.dormsy.com](https://docs.dormsy.com)
+For support, please open an issue on the [GitHub repository](https://github.com/eswarsamanthula/Dormsy_Hostel_Management_System).
 
 ---
 
