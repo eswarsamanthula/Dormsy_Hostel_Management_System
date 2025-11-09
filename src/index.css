@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dormsy Design System - Modern Hostel Management Platform
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --background: 220 15% 98%;
+    --foreground: 225 15% 15%;
+
+    /* Card & Surface Colors */
+    --card: 220 15% 100%;
+    --card-foreground: 225 15% 15%;
+
+    --popover: 220 15% 100%;
+    --popover-foreground: 225 15% 15%;
+
+    /* Primary Brand (Dormsy Blue) */
+    --primary: 216 87% 52%;
+    --primary-foreground: 220 15% 98%;
+    --primary-glow: 216 87% 65%;
+    
+    /* Feature Accent Colors */
+    --feature-student: 340 75% 60%;  /* Pink for Student Management */
+    --feature-attendance: 142 69% 50%; /* Green for Attendance */
+    --feature-payments: 216 87% 55%;  /* Blue for Payments */
+    --feature-analytics: 30 80% 60%; /* Orange for Analytics */
+    
+    /* Role-Based Colors */
+    --admin: 340 75% 55%;
+    --admin-foreground: 220 15% 98%;
+    --warden: 142 69% 45%;
+    --warden-foreground: 220 15% 98%;
+    --student: 216 87% 52%;
+    --student-foreground: 220 15% 98%;
+
+    /* Secondary & Accent */
+    --secondary: 220 15% 94%;
+    --secondary-foreground: 225 15% 25%;
+
+    --muted: 220 15% 96%;
+    --muted-foreground: 225 15% 45%;
+
+    --accent: 216 87% 95%;
+    --accent-foreground: 216 87% 25%;
+
+    /* Status Colors */
+    --success: 142 69% 45%;
+    --success-foreground: 220 15% 98%;
+    
+    --warning: 38 92% 55%;
+    --warning-foreground: 220 15% 98%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 15% 98%;
+
+    /* UI Elements */
+    --border: 220 15% 88%;
+    --input: 220 15% 94%;
+    --ring: 216 87% 52%;
+
+    --radius: 1rem;
+
+    /* Enhanced Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(216 87% 52%), hsl(216 87% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(216 87% 45%), hsl(216 87% 60%));
+    --gradient-admin: linear-gradient(135deg, hsl(340 75% 55%), hsl(340 75% 65%));
+    --gradient-warden: linear-gradient(135deg, hsl(142 69% 45%), hsl(142 69% 55%));
+    --gradient-student: linear-gradient(135deg, hsl(216 87% 52%), hsl(216 87% 65%));
+    --gradient-cta: linear-gradient(135deg, hsl(216 87% 45%), hsl(340 75% 55%));
+    --gradient-feature-bg: linear-gradient(135deg, hsl(216 87% 95%), hsl(340 75% 95%));
+    
+    /* Enhanced Shadows & Effects */
+    --shadow-soft: 0 4px 20px -4px hsl(216 87% 52% / 0.1);
+    --shadow-medium: 0 8px 40px -8px hsl(216 87% 52% / 0.15);
+    --shadow-strong: 0 20px 60px -12px hsl(216 87% 52% / 0.25);
+    --shadow-glow: 0 0 40px hsl(216 87% 52% / 0.3);
+  }
+
+  .dark {
+    --background: 225 15% 8%;
+    --foreground: 220 15% 95%;
+
+    --card: 225 15% 10%;
+    --card-foreground: 220 15% 95%;
+
+    --popover: 225 15% 10%;
+    --popover-foreground: 220 15% 95%;
+
+    --primary: 216 87% 60%;
+    --primary-foreground: 220 15% 98%;
+    --primary-glow: 216 87% 70%;
+
+    --secondary: 225 15% 15%;
+    --secondary-foreground: 220 15% 85%;
+
+    --muted: 225 15% 12%;
+    --muted-foreground: 220 15% 60%;
+
+    --accent: 225 15% 15%;
+    --accent-foreground: 220 15% 85%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 220 15% 98%;
+
+    --border: 225 15% 20%;
+    --input: 225 15% 15%;
+    --ring: 216 87% 60%;
+
+    /* Role colors for dark mode */
+    --admin: 340 75% 60%;
+    --admin-foreground: 220 15% 98%;
+    --warden: 142 69% 50%;
+    --warden-foreground: 220 15% 98%;
+    --student: 216 87% 60%;
+    --student-foreground: 220 15% 98%;
+
+    /* Status colors for dark mode */
+    --success: 142 69% 50%;
+    --success-foreground: 220 15% 98%;
+    --warning: 38 92% 60%;
+    --warning-foreground: 220 15% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border transition-all duration-300 ease-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    scroll-behavior: smooth;
+  }
+
+  /* Enhanced Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 { @apply text-4xl lg:text-6xl; }
+  h2 { @apply text-3xl lg:text-4xl; }
+  h3 { @apply text-2xl lg:text-3xl; }
+
+  /* Custom animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+    50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.6); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+    50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.6), 0 0 60px hsl(var(--primary) / 0.4); }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+
+  /* Table styling */
+  .table-zebra tbody tr:nth-child(even) {
+    @apply bg-muted/30;
+  }
+
+  /* Pill-shaped tab indicator */
+  .tab-active {
+    @apply bg-primary text-primary-foreground rounded-full shadow-soft;
+  }
+
+  /* Enhanced focus indicators for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  button:focus-visible, 
+  a:focus-visible, 
+  input:focus-visible, 
+  textarea:focus-visible, 
+  select:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+}

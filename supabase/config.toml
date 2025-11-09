@@ -1,0 +1,29 @@
+project_id = "ksxpgnjeqpiuxedilufi"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[functions.generate-user-credentials]
+verify_jwt = true
+
+[functions.reset-student-password]
+verify_jwt = true
+
+[functions.create-payment]
+verify_jwt = true
+
+[functions.broadcast-notification]
+verify_jwt = true
+
+[functions.send-notification]
+verify_jwt = false
+
+[functions.notify-on-action]
+verify_jwt = false
+
+[functions.keep-alive]
+verify_jwt = false
