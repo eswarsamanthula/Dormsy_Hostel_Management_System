@@ -152,9 +152,7 @@ npm run type-check
 
 ## 🚢 Deployment
 
-Quick deploy via Lovable:
-1. Open [Lovable Project](https://lovable.dev/projects/6af98b0f-413a-44eb-9263-5f1af9743ae0)
-2. Click "Share" → "Publish"
+Deploy the application using your preferred hosting platform (Vercel, Netlify, etc.).
 
 ## 🔍 Code Quality & Audits
 
@@ -184,7 +182,6 @@ This project is licensed under the MIT License.
 - [shadcn/ui](https://ui.shadcn.com/) for the beautiful component library
 - [Supabase](https://supabase.com/) for the backend infrastructure
 - [Stripe](https://stripe.com/) for payment processing
-- [Lovable](https://lovable.dev/) for the development platform
 
 ## 📞 Support
 
@@ -192,10 +189,7 @@ For support, email support@dormsy.com or join our community Discord.
 
 ## 🔗 Links
 
-- **Live Demo**: [https://dormsy.lovable.app](https://dormsy.lovable.app)
 - **Documentation**: [https://docs.dormsy.com](https://docs.dormsy.com)
-- **Project URL**: [Lovable Project](https://lovable.dev/projects/6af98b0f-413a-44eb-9263-5f1af9743ae0)
 
 ---
 
-Made with ❤️ by the Dormsy team
