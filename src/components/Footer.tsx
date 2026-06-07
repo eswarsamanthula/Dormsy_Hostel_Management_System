@@ -1,45 +1,8 @@
-import { Building, Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { Building, Github, ExternalLink, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from 'react';
-import { useToast } from '@/hooks/use-toast';
 
 const Footer = () => {
-  const { toast } = useToast();
-  const [newsletterEmail, setNewsletterEmail] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!newsletterEmail || !newsletterEmail.includes('@')) {
-      toast({
-        title: 'Invalid Email',
-        description: 'Please enter a valid email address',
-        variant: 'destructive'
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-    try {
-      // TODO: Integrate with email service (e.g., Mailchimp, SendGrid)
-      // For now, just show success message
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      toast({
-        title: 'Successfully Subscribed!',
-        description: 'Thank you for subscribing to our newsletter'
-      });
-      setNewsletterEmail('');
-    } catch (error) {
-      toast({
-        title: 'Subscription Failed',
-        description: 'Please try again later',
-        variant: 'destructive'
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  const repoUrl = "https://github.com/eswarsamanthula/Dormsy_Hostel_Management_System.git";
 
   const footerSections = [
     {
@@ -83,9 +46,7 @@ const Footer = () => {
   return (
     <footer id="contact" className="bg-gradient-to-b from-background to-accent/20 border-t border-border/50">
       <div className="container mx-auto px-4 py-16">
-        {/* Main footer content */}
         <div className="grid lg:grid-cols-5 gap-12 mb-12">
-          {/* Logo & Description */}
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center shadow-soft">
@@ -101,22 +62,16 @@ const Footer = () => {
             </p>
 
             <div className="flex items-center gap-3">
-              <Button variant="ghost" size="icon" className="hover:bg-primary/10" aria-label="Visit our GitHub">
-                <Github className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="hover:bg-primary/10" aria-label="Follow us on Twitter">
-                <Twitter className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="hover:bg-primary/10" aria-label="Connect on LinkedIn">
-                <Linkedin className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="hover:bg-primary/10" aria-label="Email us">
-                <Mail className="h-5 w-5" />
-              </Button>
+              <a href={repoUrl} target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="sm" className="gap-2">
+                  <Github className="h-4 w-4" />
+                  <span>View on GitHub</span>
+                  <ExternalLink className="h-3 w-3 text-muted-foreground" />
+                </Button>
+              </a>
             </div>
           </div>
 
-          {/* Footer links */}
           {footerSections.map((section, index) => (
             <div key={index} className="space-y-4">
               <h4 className="font-semibold text-foreground">{section.title}</h4>
@@ -136,37 +91,23 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Newsletter */}
-        <div className="bg-gradient-to-r from-primary/5 via-accent/10 to-primary/5 rounded-2xl p-8 mb-12">
-          <div className="text-center space-y-4 max-w-2xl mx-auto">
-            <h3 className="text-xl font-semibold">Stay Updated</h3>
-            <p className="text-muted-foreground">
-              Get updates on new features and best practices.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 w-full">
-                <input 
-                  type="email" 
-                  value={newsletterEmail}
-                  onChange={(e) => setNewsletterEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  disabled={isSubmitting}
-                  required
-                  className="flex-1 px-4 py-2 rounded-lg border border-input bg-background focus:ring-2 focus:ring-ring focus:border-transparent outline-none transition-all disabled:opacity-50"
-                  aria-label="Email address for newsletter"
-                />
-                <Button type="submit" variant="hero" disabled={isSubmitting}>
-                  {isSubmitting ? 'Subscribing...' : 'Subscribe'}
-                </Button>
-              </form>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-border/50 gap-4">
           <div className="text-sm text-muted-foreground">
-            © 2025 Dormsy. All rights reserved.
+&copy; {new Date().getFullYear()} Dormsy. All rights reserved.
+          </div>
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Code2 className="h-4 w-4" />
+            <span>
+              Built by{" "}
+              <a
+                href={repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-foreground hover:text-primary transition-colors"
+              >
+                Eswar &amp; Team
+              </a>
+            </span>
           </div>
         </div>
       </div>
