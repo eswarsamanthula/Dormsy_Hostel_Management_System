@@ -4,6 +4,9 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18.3-blue)](https://reactjs.org/)
 
+## 🌐 Live Demo
+[https://dormsy.vercel.app](https://dormsy.vercel.app)
+
 **Dormsy** is a comprehensive digital hostel management platform that streamlines operations for administrators, wardens, and students. Built with modern web technologies, it offers seamless management of student records, attendance tracking, mess operations, fee management, and more.
 
 ## 🌟 Features
