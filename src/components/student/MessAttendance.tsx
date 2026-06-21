@@ -68,7 +68,6 @@ const MessAttendance = () => {
         .eq('date', dateString)
         .eq('attendance_type', 'mess');
 
-      console.log('Fetched attendance data:', attendanceData, 'Error:', error);
       
       // Convert database records to UI format
       const meals = ['breakfast', 'lunch', 'dinner'] as const;
@@ -207,7 +206,6 @@ const MessAttendance = () => {
   const generateDailyMessRecords = async (dateString: string) => {
     try {
       // This will be implemented after database schema is finalized
-      console.log('Generating records for', dateString);
     } catch (error) {
       console.error('Error generating daily records:', error);
     }

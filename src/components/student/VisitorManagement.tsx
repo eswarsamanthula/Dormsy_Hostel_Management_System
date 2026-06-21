@@ -60,7 +60,6 @@ export default function VisitorManagement({ studentId, studentData }: VisitorMan
 
   const fetchVisitors = async () => {
     try {
-      console.log('Fetching visitors for student ID:', studentId);
       const { data, error } = await supabase
         .from('visitors')
         .select('*')
@@ -72,7 +71,6 @@ export default function VisitorManagement({ studentId, studentData }: VisitorMan
         throw error;
       }
       
-      console.log('Visitors data received:', data);
       // Type cast with proper status handling
       const visitorsData = (data || []).map(visitor => ({
         ...visitor,

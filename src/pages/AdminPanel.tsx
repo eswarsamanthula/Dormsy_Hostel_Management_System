@@ -20,7 +20,7 @@ import DataExport from "@/components/admin/DataExport";
 import UserManagement from "@/components/admin/UserManagement";
 import NotificationBroadcast from "@/components/admin/NotificationBroadcast";
 import FeeManagement from "@/components/admin/FeeManagement";
-import SystemHealth from "@/components/admin/SystemHealth";
+
 import MessAttendanceHistoryAdmin from "@/components/admin/MessAttendanceHistoryAdmin";
 
 const useSEO = (title: string, description: string, canonicalPath: string) => {
@@ -294,7 +294,7 @@ const AdminPanel = () => {
             <TabsTrigger value="export" className="whitespace-nowrap">Data Export</TabsTrigger>
             <TabsTrigger value="users" className="whitespace-nowrap">Users</TabsTrigger>
             <TabsTrigger value="reports" className="whitespace-nowrap">Reports</TabsTrigger>
-            <TabsTrigger value="health" className="whitespace-nowrap">System Health</TabsTrigger>
+
           </TabsList>
 
           <TabsContent value="colleges">
@@ -710,10 +710,6 @@ const AdminPanel = () => {
             <ReportsInsights />
           </TabsContent>
 
-          <TabsContent value="health">
-            <SystemHealth />
-          </TabsContent>
-          
           <TabsContent value="fees">
             <FeeManagement />
           </TabsContent>
