@@ -78,8 +78,8 @@ npm install
 3. **Environment Setup**
 
 The project is connected to Supabase. Required environment variables:
-- `SUPABASE_URL`: Your Supabase project URL
-- `SUPABASE_ANON_KEY`: Your Supabase anonymous key
+- `VITE_SUPABASE_URL`: Your Supabase project URL
+- `VITE_SUPABASE_PUBLISHABLE_KEY`: Your Supabase anonymous key
 - `STRIPE_SECRET_KEY`: Your Stripe secret key (configured in Supabase secrets)
 
 4. **Start development server**
